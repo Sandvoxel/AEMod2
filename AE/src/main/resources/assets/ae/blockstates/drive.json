@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "ae:drive" },
+        "facing=south": { "model": "ae:drive", "y": 180 },
+        "facing=west":  { "model": "ae:drive", "y": 270 },
+        "facing=east":  { "model": "ae:drive", "y": 90 }
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "ae:blocks/BlockGrinder",
+    "front": "ae:blocks/BlockGrinderFront",
+    "side": "ae:blocks/BlockGrinderSide"
+  }
+}
