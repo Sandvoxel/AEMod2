@@ -11,9 +11,29 @@
 
 
     "down=none,east=side,north=side,south=none,up=none,west=none":   { "model": "ae:cableangelhor","x": 180, "y": 90},
-    "down=none,east=side,north=none,south=side,up=none,west=none":   { "model": "ae:cableangelhor", "y": 270, "uvlock": true },
+    "down=none,east=side,north=none,south=side,up=none,west=none":   { "model": "ae:cableangelhor", "y": 270},
     "down=none,east=none,north=none,south=side,up=none,west=side":   { "model": "ae:cableangelhor", "uvlock": true },
-    "down=none,east=none,north=side,south=none,up=none,west=side":   { "model": "ae:cableangelhor", "y": 90, "uvlock": true },
+    "down=none,east=none,north=side,south=none,up=none,west=side":   { "model": "ae:cableangelhor", "y": 90},
+
+    "down=none,east=side,north=none,south=none,up=side,west=none":   { "model": "ae:cableUpAndSide", "y": 90},
+    "down=none,east=none,north=side,south=none,up=side,west=none":   { "model": "ae:cableUpAndSide"},
+    "down=none,east=none,north=none,south=side,up=side,west=none":   { "model": "ae:cableUpAndSide", "y": 180},
+    "down=none,east=none,north=none,south=none,up=side,west=side":   { "model": "ae:cableUpAndSide", "y": 270},
+
+    "down=side,east=side,north=none,south=none,up=none,west=none":   { "model": "ae:cableDownAndSide", "y": 90},
+    "down=side,east=none,north=side,south=none,up=none,west=none":   { "model": "ae:cableDownAndSide"},
+    "down=side,east=none,north=none,south=side,up=none,west=none":   { "model": "ae:cableDownAndSide", "y": 180},
+    "down=side,east=none,north=none,south=none,up=none,west=side":   { "model": "ae:cableDownAndSide", "y": 270},
+
+    "down=side,east=side,north=none,south=none,up=side,west=none":   { "model": "ae:cableTVertAndSide", "y": 90},
+    "down=side,east=none,north=side,south=none,up=side,west=none":   { "model": "ae:cableTVertAndSide"},
+    "down=side,east=none,north=none,south=side,up=side,west=none":   { "model": "ae:cableTVertAndSide", "y": 180},
+    "down=side,east=none,north=none,south=none,up=side,west=side":   { "model": "ae:cableTVertAndSide", "y": 270},
+
+    "down=none,east=side,north=none,south=none,up=side,west=side":   { "model": "ae:cableTHorizAndUp", "y": 90},
+    "down=none,east=none,north=side,south=side,up=side,west=none":   { "model": "ae:cableTHorizAndUp"},
+    "down=side,east=side,north=none,south=none,up=none,west=side":   { "model": "ae:cableTHorizAndDown", "y": 90},
+    "down=side,east=none,north=side,south=side,up=none,west=none":   { "model": "ae:cableTHorizAndDown"},
 
     "down=none,east=none,north=side,south=side,up=none,west=none":  { "model": "ae:cablestrate" , "y": 90 },
     "down=none,east=side,north=none,south=none,up=none,west=side":  { "model": "ae:cablestrate"},
@@ -24,7 +44,13 @@
     "down=none,east=side,north=side,south=none,up=none,west=side": {"model": "ae:cableTJun", "y":180 },
     "down=none,east=side,north=side,south=side,up=none,west=none": {"model": "ae:cableTJun", "y":270 },
 
-    "down=none,east=side,north=side,south=side,up=none,west=side": { "model": "ae:cableXJun", "uvlock": true }
+    "down=none,east=side,north=side,south=side,up=none,west=side": { "model": "ae:cableXJun"},
+    "down=side,east=none,north=side,south=side,up=side,west=none": { "model": "ae:cableXJunVert"},
+    "down=side,east=side,north=none,south=none,up=side,west=side": { "model": "ae:cableXJunVert", "y":90 },
+    "down=none,east=side,north=side,south=side,up=side,west=side": { "model": "ae:cableXJunHorizAndUp"},
+    "down=side,east=side,north=side,south=side,up=none,west=side": { "model": "ae:cableXJunHorizAndDown"},
+
+    "down=side,east=side,north=side,south=side,up=side,west=side": { "model": "ae:cableAll"}
 
 
 
