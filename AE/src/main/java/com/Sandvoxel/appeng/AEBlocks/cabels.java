@@ -122,20 +122,6 @@ public class cabels extends Block implements ITileEntityProvider {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     protected BlockState createBlockState() {
         return new BlockState(this, new IProperty[] { NORTH, EAST, WEST, SOUTH,});
