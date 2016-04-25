@@ -1,22 +1,13 @@
 package com.Sandvoxel.appeng.AEBlocks;
 
-import com.Sandvoxel.appeng.AEItems.AEItems;
-import com.Sandvoxel.appeng.data;
 import com.Sandvoxel.appeng.tileEntiy.AETileEntiy;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.world.IBlockAccess;
@@ -26,7 +17,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 
 public class cabels extends Block implements ITileEntityProvider {
@@ -108,7 +98,7 @@ public class cabels extends Block implements ITileEntityProvider {
         BlockPos blockpos = pos.offset(direction);
         Block block = worldIn.getBlockState(pos.offset(direction)).getBlock();
 
-        if (!canRestoneConnect(worldIn, blockpos, direction) && (block.isNormalCube() || !canRestoneConnect(worldIn, blockpos.down(), null)))
+        if (!canCableConnect(worldIn, blockpos, direction) && (block.isNormalCube() || !canCableConnect(worldIn, blockpos.down(), null)))
         {
             Block block1 = worldIn.getBlockState(pos.up()).getBlock();
             return EnumAttachPosition.SIDE;
@@ -118,7 +108,7 @@ public class cabels extends Block implements ITileEntityProvider {
             return EnumAttachPosition.NONE;
         }
     }
-    protected static boolean canRestoneConnect(IBlockAccess world, BlockPos pos, EnumFacing side)
+    protected static boolean canCableConnect(IBlockAccess world, BlockPos pos, EnumFacing side)
     {
         IBlockState state = world.getBlockState(pos);
         if (state.getBlock() == AEBlocks.cabel)

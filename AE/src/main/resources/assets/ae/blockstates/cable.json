@@ -13,12 +13,12 @@
     "east=none,north=none,south=side,west=side":   { "model": "ae:cableangelhor", "uvlock": true },
     "east=none,north=side,south=none,west=side":   { "model": "ae:cableangelhor", "y": 90, "uvlock": true },
 
-    "east=none,north=side,south=side,up=side,west=none":  { "model": "ae:cablestrate" , "y": 90 },
-    "east=side,north=none,south=none,up=side,west=side":  { "model": "ae:cablestrate"},
+    "east=none,north=side,south=side,west=none":  { "model": "ae:cablestrate" , "y": 90 },
+    "east=side,north=none,south=none,west=side":  { "model": "ae:cablestrate"},
 
 
 
-    "east=side,north=side,south=side,up=side,west=none":    { "model": "ae:cablenorth", "uvlock": true },
+    "east=side,north=side,south=side,west=none":    { "model": "ae:cablenorth", "uvlock": true },
 
 
     "east=side,north=none,south=side,up=side,west=side":    { "model": "ae:cablenorth", "y": 90, "uvlock": true },
