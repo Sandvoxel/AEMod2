@@ -26,6 +26,6 @@ public class AEBaceBlock extends Block {
     public AEBaceBlock(String drive){
         super(Material.glass);
         this.setCreativeTab(AEItems.tabMyMod);
-        this.setStepSound(Block.soundTypeGlass);
+        this.setStepSound(soundTypeGlass);
     }
 }

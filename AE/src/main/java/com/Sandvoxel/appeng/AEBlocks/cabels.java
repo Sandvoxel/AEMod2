@@ -32,7 +32,7 @@ public class cabels extends Block implements ITileEntityProvider {
     public cabels (String drive){
         super(Material.glass);
         this.setUnlocalizedName("cable");
-
+        this.setStepSound(soundTypeGlass);
         this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, cabels.EnumAttachPosition.NONE).withProperty(EAST, cabels.EnumAttachPosition.NONE).withProperty(SOUTH, cabels.EnumAttachPosition.NONE).withProperty(WEST, cabels.EnumAttachPosition.NONE).withProperty(UP, cabels.EnumAttachPosition.NONE).withProperty(DOWN, cabels.EnumAttachPosition.NONE));
 
 
@@ -127,7 +127,7 @@ public class cabels extends Block implements ITileEntityProvider {
     }
 
 
-    static enum EnumAttachPosition implements IStringSerializable
+    enum EnumAttachPosition implements IStringSerializable
     {
 
         NONE(0, "side"),

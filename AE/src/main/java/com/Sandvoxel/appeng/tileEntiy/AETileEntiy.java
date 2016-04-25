@@ -1,6 +1,7 @@
 package com.Sandvoxel.appeng.tileEntiy;
 
 
+import com.Sandvoxel.appeng.AEBlocks.cabels;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
@@ -13,8 +14,13 @@ import javax.imageio.event.IIOReadUpdateListener;
 public class AETileEntiy extends TileEntity implements ITickable {
 
 
-    @Override
+
     public void update() {
 
-    }
-}
+
+
+
+
+        System.out.println("hi");
+
+}}

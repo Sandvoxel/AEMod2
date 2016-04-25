@@ -17,6 +17,7 @@ public class AEblockrender {
     public static void registerItemRenderer() {
         reg(AEBlocks.drive);
         reg(AEBlocks.cabel);
+
     }
 
  public static void reg(Block block){
