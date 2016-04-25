@@ -1,4 +1,5 @@
 {
+  "__comment": "thhe model files are not correct didnt have time the model  down=none,east=side,north=none,south=side,up=side,west=side: {model: ae:cableTJun starting with that one" ,
   "variants": {
     "down=none,east=none,north=none,south=none,up=none,west=none": { "model": "ae:cablenone" },
 
@@ -26,9 +27,9 @@
     "down=side,east=none,north=none,south=none,up=none,west=side":   { "model": "ae:cableDownAndSide", "y": 270},
 
     "down=side,east=side,north=none,south=none,up=side,west=none":   { "model": "ae:cableTVertAndSide", "y": 90},
-    "down=side,east=none,north=side,south=none,up=side,west=none":   { "model": "ae:cableTVertAndSide", "y": 180},
-    "down=side,east=none,north=none,south=side,up=side,west=none":   { "model": "ae:cableTVertAndSide", "y": 270},
-    "down=side,east=none,north=none,south=none,up=side,west=side":   { "model": "ae:cableTVertAndSide"},
+    "down=side,east=none,north=side,south=none,up=side,west=none":   { "model": "ae:cableTVertAndSide"},
+    "down=side,east=none,north=none,south=side,up=side,west=none":   { "model": "ae:cableTVertAndSide", "y": 180},
+    "down=side,east=none,north=none,south=none,up=side,west=side":   { "model": "ae:cableTVertAndSide", "y": 270},
 
     "down=none,east=side,north=none,south=none,up=side,west=side":   { "model": "ae:cableTHorizAndUp", "y": 90},
     "down=none,east=none,north=side,south=side,up=side,west=none":   { "model": "ae:cableTHorizAndUp"},
@@ -54,7 +55,10 @@
     "down=none,east=side,north=side,south=none,up=none,west=side": {"model": "ae:cableTJun", "y":180 },
     "down=none,east=side,north=side,south=side,up=none,west=none": {"model": "ae:cableTJun", "y":270 },
 
-
+    "down=none,east=side,north=none,south=side,up=side,west=side": {"model": "ae:cableTJun" },
+    "down=none,east=none,north=none,south=side,up=side,west=side": {"model": "ae:cableTJun", "y":90 },
+    "down=none,east=side,north=side,south=side,up=side,west=none": {"model": "ae:cableTJun", "y":180 },
+    "down=none,east=side,north=none,south=side,up=side,west=none": {"model": "ae:cableTJun", "y":270 },
 
     "down=none,east=side,north=side,south=side,up=none,west=side": { "model": "ae:cableXJun"},
     "down=side,east=none,north=side,south=side,up=side,west=none": { "model": "ae:cableXJunVert"},
