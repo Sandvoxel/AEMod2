@@ -1,8 +1,9 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
-        "0": "blocks/ItemPartCableGlass",
-        "1": "blocks/blank"
+        "particle": "ae:blocks/ItemPartCableGlass",
+        "0": "ae:blocks/ItemPartCableGlass",
+        "1": "ae:blocks/blank"
     },
     "elements": [
         {

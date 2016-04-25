@@ -1,5 +1,5 @@
 {
-  "parent": "ae:block/cable",
+  "parent": "ae:block/cablenone",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],
