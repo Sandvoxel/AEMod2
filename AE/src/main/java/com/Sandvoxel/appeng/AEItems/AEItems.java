@@ -15,6 +15,7 @@ public class AEItems {
     };
 
     public static Item test;
+    public static Item onekdrive;
 
 
 
@@ -22,5 +23,6 @@ public class AEItems {
 
     public static void createitems() {
         GameRegistry.registerItem(test = new palceitem("test"), test.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(onekdrive = new Drives("1kdrive"), onekdrive.getUnlocalizedName().substring(5));
     }
 }

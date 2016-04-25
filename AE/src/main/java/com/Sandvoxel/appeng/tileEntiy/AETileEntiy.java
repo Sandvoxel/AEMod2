@@ -21,6 +21,6 @@ public class AETileEntiy extends TileEntity implements ITickable {
 
 
 
-        System.out.println("hi");
+
 
 }}

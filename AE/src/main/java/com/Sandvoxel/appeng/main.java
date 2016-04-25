@@ -11,6 +11,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class main {
 
 
+@Mod.Instance
+public static main instance = new main();
 
 
 

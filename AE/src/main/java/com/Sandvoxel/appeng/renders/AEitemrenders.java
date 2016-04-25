@@ -12,6 +12,7 @@ public class AEitemrenders {
 
     public static void registerItemRenderer() {
         reg(AEItems.test);
+        reg(AEItems.onekdrive);
     }
 
     public static void reg(Item item) {
