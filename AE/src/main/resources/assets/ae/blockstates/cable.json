@@ -1,5 +1,5 @@
 {
-  "__comment": "thhe model files are not correct didnt have time the model  down=none,east=side,north=none,south=side,up=side,west=side: {model: ae:cableTJun starting with that one" ,
+  "__comment": "thhe model files are not correct didnt have time the model  down=none,east=side,north=none,south=side,up=side,west=side: {model: ae:cableTJun}--starting with that one" ,
   "variants": {
     "down=none,east=none,north=none,south=none,up=none,west=none": { "model": "ae:cablenone" },
 
