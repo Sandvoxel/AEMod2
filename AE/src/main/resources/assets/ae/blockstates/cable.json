@@ -1,27 +1,30 @@
 {
   "variants": {
-    "east=none,north=none,south=none,west=none": { "model": "ae:cablenone" },
+    "down=none,east=none,north=none,south=none,up=none,west=none": { "model": "ae:cablenone" },
 
-    "east=side,north=none,south=none,west=none": { "model": "ae:cableend" },
-    "east=none,north=side,south=none,west=none": { "model": "ae:cableend", "y": 270 },
-    "east=none,north=none,south=side,west=none": { "model": "ae:cableend", "y": 90},
-    "east=none,north=none,south=none,west=side": { "model": "ae:cableend", "y": 180 },
+    "down=none,east=side,north=none,south=none,up=none,west=none": { "model": "ae:cableend" },
+    "down=none,east=none,north=side,south=none,up=none,west=none": { "model": "ae:cableend", "y": 270 },
+    "down=none,east=none,north=none,south=side,up=none,west=none": { "model": "ae:cableend", "y": 90},
+    "down=none,east=none,north=none,south=none,up=none,west=side": { "model": "ae:cableend", "y": 180 },
+    "down=side,east=none,north=none,south=none,up=none,west=none": { "model": "ae:cableEndDown"},
+    "down=none,east=none,north=none,south=none,up=side,west=none": { "model": "ae:cableEndUp"},
 
 
-    "east=side,north=side,south=none,west=none":   { "model": "ae:cableangelhor","x": 180, "y": 90},
-    "east=side,north=none,south=side,west=none":   { "model": "ae:cableangelhor", "y": 270, "uvlock": true },
-    "east=none,north=none,south=side,west=side":   { "model": "ae:cableangelhor", "uvlock": true },
-    "east=none,north=side,south=none,west=side":   { "model": "ae:cableangelhor", "y": 90, "uvlock": true },
+    "down=none,east=side,north=side,south=none,up=none,west=none":   { "model": "ae:cableangelhor","x": 180, "y": 90},
+    "down=none,east=side,north=none,south=side,up=none,west=none":   { "model": "ae:cableangelhor", "y": 270, "uvlock": true },
+    "down=none,east=none,north=none,south=side,up=none,west=side":   { "model": "ae:cableangelhor", "uvlock": true },
+    "down=none,east=none,north=side,south=none,up=none,west=side":   { "model": "ae:cableangelhor", "y": 90, "uvlock": true },
 
-    "east=none,north=side,south=side,west=none":  { "model": "ae:cablestrate" , "y": 90 },
-    "east=side,north=none,south=none,west=side":  { "model": "ae:cablestrate"},
+    "down=none,east=none,north=side,south=side,up=none,west=none":  { "model": "ae:cablestrate" , "y": 90 },
+    "down=none,east=side,north=none,south=none,up=none,west=side":  { "model": "ae:cablestrate"},
+    "down=side,east=none,north=none,south=none,up=side,west=none":  { "model": "ae:cableStraightVertical", "y": 90},
 
-    "east=side,north=none,south=side,west=side": {"model": "ae:cableTJun" },
-    "east=none,north=side,south=side,west=side": {"model": "ae:cableTJun", "y":90 },
-    "east=side,north=side,south=none,west=side": {"model": "ae:cableTJun", "y":180 },
-    "east=side,north=side,south=side,west=none": {"model": "ae:cableTJun", "y":270 },
+    "down=none,east=side,north=none,south=side,up=none,west=side": {"model": "ae:cableTJun" },
+    "down=none,east=none,north=side,south=side,up=none,west=side": {"model": "ae:cableTJun", "y":90 },
+    "down=none,east=side,north=side,south=none,up=none,west=side": {"model": "ae:cableTJun", "y":180 },
+    "down=none,east=side,north=side,south=side,up=none,west=none": {"model": "ae:cableTJun", "y":270 },
 
-    "east=side,north=side,south=side,west=side": { "model": "ae:cableXJun", "uvlock": true }
+    "down=none,east=side,north=side,south=side,up=none,west=side": { "model": "ae:cableXJun", "uvlock": true }
 
 
 

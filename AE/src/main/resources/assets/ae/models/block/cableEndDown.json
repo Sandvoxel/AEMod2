@@ -2,8 +2,7 @@
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
         "particle": "blocks/ae:blocks/ItemPartCableGlass",
-        "0": "blocks/ItemPartCableGlass",
-        "1": "ae:blocks/ItemPartCableGlass"
+        "0": "ae:blocks/ItemPartCableGlass"
     },
     "elements": [
         {
@@ -12,7 +11,7 @@
             "to": [ 10.0, 10.0, 10.0 ], 
             "faces": {
                 "north": { "texture": "#0", "uv": [ 6.0, 6.0, 10.0, 16.0 ] },
-                "east": { "texture": "#1", "uv": [ 6.0, 6.0, 10.0, 16.0 ] },
+                "east": { "texture": "#0", "uv": [ 6.0, 6.0, 10.0, 16.0 ] },
                 "south": { "texture": "#0", "uv": [ 6.0, 6.0, 10.0, 16.0 ] },
                 "west": { "texture": "#0", "uv": [ 10.0, 6.0, 6.0, 16.0 ] },
                 "up": { "texture": "#0", "uv": [ 6.0, 6.0, 10.0, 10.0 ] }

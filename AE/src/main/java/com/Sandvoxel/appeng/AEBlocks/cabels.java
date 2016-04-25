@@ -25,15 +25,15 @@ public class cabels extends Block implements ITileEntityProvider {
     public static final PropertyEnum EAST = PropertyEnum.<cabels.EnumAttachPosition>create("east", cabels.EnumAttachPosition.class);
     public static final PropertyEnum SOUTH = PropertyEnum.<cabels.EnumAttachPosition>create("south", cabels.EnumAttachPosition.class);
     public static final PropertyEnum WEST = PropertyEnum.<cabels.EnumAttachPosition>create("west", cabels.EnumAttachPosition.class);
-    //public static final PropertyEnum UP = PropertyEnum.<cabels.EnumAttachPosition>create("up", cabels.EnumAttachPosition.class);
-    //public static final PropertyEnum DOWN = PropertyEnum.<cabels.EnumAttachPosition>create("down", cabels.EnumAttachPosition.class);
+    public static final PropertyEnum UP = PropertyEnum.<cabels.EnumAttachPosition>create("up", cabels.EnumAttachPosition.class);
+    public static final PropertyEnum DOWN = PropertyEnum.<cabels.EnumAttachPosition>create("down", cabels.EnumAttachPosition.class);
 
 
     public cabels (String drive){
         super(Material.glass);
         this.setUnlocalizedName("cable");
 
-        this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, cabels.EnumAttachPosition.NONE).withProperty(EAST, cabels.EnumAttachPosition.NONE).withProperty(SOUTH, cabels.EnumAttachPosition.NONE).withProperty(WEST, cabels.EnumAttachPosition.NONE));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, cabels.EnumAttachPosition.NONE).withProperty(EAST, cabels.EnumAttachPosition.NONE).withProperty(SOUTH, cabels.EnumAttachPosition.NONE).withProperty(WEST, cabels.EnumAttachPosition.NONE).withProperty(UP, cabels.EnumAttachPosition.NONE).withProperty(DOWN, cabels.EnumAttachPosition.NONE));
 
 
          }
@@ -89,7 +89,8 @@ public class cabels extends Block implements ITileEntityProvider {
         state = state.withProperty(EAST, this.getAttachPosition(worldIn, pos, EnumFacing.EAST));
         state = state.withProperty(NORTH, this.getAttachPosition(worldIn, pos, EnumFacing.NORTH));
         state = state.withProperty(SOUTH, this.getAttachPosition(worldIn, pos, EnumFacing.SOUTH));
-        //state = state.withProperty(UP, this.getAttachPosition(worldIn, pos, EnumFacing.UP));
+        state = state.withProperty(UP, this.getAttachPosition(worldIn, pos, EnumFacing.UP));
+        state = state.withProperty(DOWN, this.getAttachPosition(worldIn, pos, EnumFacing.DOWN));
 
         return state;
     }
@@ -98,9 +99,8 @@ public class cabels extends Block implements ITileEntityProvider {
         BlockPos blockpos = pos.offset(direction);
         Block block = worldIn.getBlockState(pos.offset(direction)).getBlock();
 
-        if (!canCableConnect(worldIn, blockpos, direction) && (block.isNormalCube() || !canCableConnect(worldIn, blockpos.down(), null)))
+        if (!canCableConnect(worldIn, blockpos, direction) && (block.isNormalCube() || !canCableConnect(worldIn, blockpos, direction)))
         {
-            Block block1 = worldIn.getBlockState(pos.up()).getBlock();
             return EnumAttachPosition.SIDE;
         }
         else
@@ -111,20 +111,19 @@ public class cabels extends Block implements ITileEntityProvider {
     protected static boolean canCableConnect(IBlockAccess world, BlockPos pos, EnumFacing side)
     {
         IBlockState state = world.getBlockState(pos);
-        if (state.getBlock() == AEBlocks.cabel)
+        if (state.getBlock() == AEBlocks.cabel || state.getBlock() == AEBlocks.drive)
         {
             return true;
         }
         else
         {
-            return state.getBlock() == AEBlocks.drive;
-
+            return false;
         }
     }
 
     @Override
     protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[] { NORTH, EAST, WEST, SOUTH,});
+        return new BlockState(this, new IProperty[] { NORTH, EAST, WEST, SOUTH, UP, DOWN});
     }
 
 
@@ -161,7 +160,7 @@ public class cabels extends Block implements ITileEntityProvider {
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty( SOUTH, meta == 0 ? EnumAttachPosition.NONE : EnumAttachPosition.SIDE );
+        return getDefaultState().withProperty(SOUTH, meta == 0 ? EnumAttachPosition.NONE : EnumAttachPosition.SIDE );
     }
 
 
