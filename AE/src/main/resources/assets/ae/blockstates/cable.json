@@ -17,12 +17,12 @@
     "east=side,north=none,south=none,up=side,west=side":  { "model": "ae:cablestrate"},
 
 
-    "east=side,north=none,south=side,up=side,west=side":    { "model": "ae:cablenorth", "y": 90, "uvlock": true },
+    "east=side,north=none,south=side,west=side":    { "model": "ae:cablenorth", "y": 90, "uvlock": true },
 
 
-    "east=none,north=side,south=side,up=side,west=side":    { "model": "ae:cablenorth", "y": 180, "uvlock": true },
+    "east=none,north=side,south=side,west=side":    { "model": "ae:cablenorth", "y": 180, "uvlock": true },
 
-    "east=side,north=side,south=none,up=side,west=side":    { "model": "ae:cablenorth", "y": 270, "uvlock": true },
+    "east=side,north=side,south=none,west=side":    { "model": "ae:cablenorth", "y": 270, "uvlock": true },
 
     "east=side,north=side,south=side,west=side": { "model": "ae:cableXJun", "uvlock": true }
 
