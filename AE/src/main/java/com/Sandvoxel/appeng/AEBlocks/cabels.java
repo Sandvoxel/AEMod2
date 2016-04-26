@@ -8,6 +8,7 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.world.IBlockAccess;
@@ -67,15 +68,29 @@ public class cabels extends Block implements ITileEntityProvider {
         return false;
     }
 
+    public boolean canConnectTo(IBlockAccess worldIn, BlockPos pos)
+    {
+        Block block = worldIn.getBlockState(pos).getBlock();
+        return block == AEBlocks.cabel ? true : block == AEBlocks.drive ? true : false;
+    }
+
     public void addCollisionBoxesToList(World worldIn, BlockPos pos, IBlockState state, AxisAlignedBB mask, List<AxisAlignedBB> list, Entity collidingEntity)
     {
-        this.setBlockBounds(0.55F, 0.62F, 0.45F, 0.45F, 0.3F, 0.55F);
+        boolean flagNorth = this.canConnectTo(worldIn, pos.north());
+        boolean flagSouth = this.canConnectTo(worldIn, pos.south());
+        boolean flagWest = this.canConnectTo(worldIn, pos.west());
+        boolean flagEast = this.canConnectTo(worldIn, pos.east());
+        boolean flagUp = this.canConnectTo(worldIn, pos.up());
+        boolean flagDown = this.canConnectTo(worldIn, pos.down());
+
+
+        this.setBlockBounds(0.375F, 0.375F, 0.375F, 0.625F, 0.625F, 0.625F);
         super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
     }
 
     public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
     {
-        this.setBlockBounds(0.38F, 0.38F, 0.38F, 0.627F, 0.627F, 0.627F);
+        this.setBlockBounds(0.375F, 0.375F, 0.375F, 0.625F, 0.625F, 0.625F);
     }
 
 
