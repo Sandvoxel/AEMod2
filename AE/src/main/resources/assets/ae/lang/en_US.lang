@@ -1,2 +1,5 @@
+itemGroup.myMod=Applied Energistics III
+
 tile.drive.name=Storage Drive
 tile.cable.name=ME Cable
+item.1KDrive.name=1K Storage Drive

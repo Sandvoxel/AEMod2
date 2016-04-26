@@ -1,7 +1,6 @@
 package com.Sandvoxel.appeng.tileEntiy;
 
-import com.Sandvoxel.appeng.AESaveData.AEDriveStore;
-import net.minecraft.client.renderer.texture.ITickable;
+import com.Sandvoxel.appeng.AESaveData.AEDriveCache;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -15,14 +14,14 @@ import java.util.List;
  */
 public class AEDriveEntiy extends TileEntity {
 
-    private List<AEDriveStore> data = new ArrayList<AEDriveStore>();
+    private List<AEDriveCache> data = new ArrayList<AEDriveCache>();
 
     public void adddata ( ItemStack dart){
         NBTTagCompound nbt = (NBTTagCompound) dart.getTagCompound().getTag("bool");
         boolean test = nbt.getBoolean("test");
-        data.add(new AEDriveStore(test));
+        data.add(new AEDriveCache(test));
     }
-    public AEDriveStore getEntry(int i)
+    public AEDriveCache getEntry(int i)
     {
         if(i < data.size())
         {
@@ -42,13 +41,13 @@ public class AEDriveEntiy extends TileEntity {
     {
         super.readFromNBT(compound);
 
-        data = new ArrayList<AEDriveStore>();
+        data = new ArrayList<AEDriveCache>();
 
         NBTTagList entryList = (NBTTagList) compound.getTag("teleports");
         for(int i = 0; i < entryList.tagCount(); i++)
         {
             NBTTagCompound entryCompound = entryList.getCompoundTagAt(i);
-            AEDriveStore entry = AEDriveStore.readEntryFromNBT(entryCompound);
+            AEDriveCache entry = AEDriveCache.readEntryFromNBT(entryCompound);
             data.add(entry);
         }
     }
@@ -59,7 +58,7 @@ public class AEDriveEntiy extends TileEntity {
         super.writeToNBT(compound);
 
         NBTTagList entryList = new NBTTagList();
-        for(AEDriveStore entry : data)
+        for(AEDriveCache entry : data)
         {
             NBTTagCompound entryCompound = new NBTTagCompound();
             entry.writeEntryToNBT(entryCompound);

@@ -1,15 +1,14 @@
 package com.Sandvoxel.appeng.AESaveData;
 
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.BlockPos;
 
 /**
  * Created by koval on 4/25/2016.
  */
-public class AEDriveStore {
+public class AEDriveCache {
     private Boolean test;
 
-    public AEDriveStore(boolean test) {
+    public AEDriveCache(boolean test) {
         this.test = test;
     }
 
@@ -26,9 +25,9 @@ public class AEDriveStore {
 
         nbt.setBoolean("test", test);
     }
-    public static AEDriveStore readEntryFromNBT(NBTTagCompound nbt)
+    public static AEDriveCache readEntryFromNBT(NBTTagCompound nbt)
     {
-        return new AEDriveStore(nbt.getBoolean("test"));
+        return new AEDriveCache(nbt.getBoolean("test"));
     }
 
 }

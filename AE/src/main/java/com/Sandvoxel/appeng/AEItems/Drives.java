@@ -3,6 +3,7 @@ package com.Sandvoxel.appeng.AEItems;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumChatFormatting;
@@ -18,11 +19,11 @@ import java.util.List;
  */
 public class Drives extends Item {
 
-    public Drives(String onekdrive){
+    public Drives(String unlocalizedName){
         super();
 
         this.setCreativeTab(AEItems.tabMyMod);
-        this.setUnlocalizedName("onekdrive");
+        this.setUnlocalizedName(unlocalizedName);
 
 
     }
@@ -31,7 +32,6 @@ public class Drives extends Item {
     {
         if (playerIn.isSneaking()){
             if (stack.getTagCompound() == null){
-
 
                 stack.setTagCompound(new NBTTagCompound());
             }
@@ -45,11 +45,13 @@ public class Drives extends Item {
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn)
     {
+        NBTTagCompound nbt = stack.getTagCompound();
+
         if (!playerIn.isSneaking()){
             if (stack.getTagCompound() != null){
 
                 System.out.println("this works");
-                stack.getTagCompound().removeTag("bool");
+                nbt.setBoolean("test", false);
                 stack.clearCustomName();
             }
         }
@@ -58,15 +60,13 @@ public class Drives extends Item {
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
     {
-        if (stack.getTagCompound().hasKey("bool")){
-
+        if (stack.hasTagCompound()) {
+            tooltip.add("NBT: " + stack.getTagCompound().toString());
+        } else {
+            tooltip.add("No NBT data stored");
         }
-        NBTTagCompound nbt = (NBTTagCompound) stack.getTagCompound().getTag("bool");
-        boolean test = nbt.getBoolean("test");
-        tooltip.add("state "+ test);
-
-
     }
+
     @Override
     @SideOnly(Side.CLIENT)
     public boolean hasEffect(ItemStack stack)
