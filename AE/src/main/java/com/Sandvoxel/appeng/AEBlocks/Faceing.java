@@ -1,18 +1,22 @@
 package com.Sandvoxel.appeng.AEBlocks;
 
+import com.Sandvoxel.appeng.tileEntiy.AEDriveEntiy;
+import com.Sandvoxel.appeng.tileEntiy.AETileEntiy;
 import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 
-public class Faceing extends AEBaceBlock {
+public class Faceing extends AEBaceBlock implements ITileEntityProvider {
 
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
@@ -70,5 +74,7 @@ public class Faceing extends AEBaceBlock {
         return new BlockState(this, new IProperty[] {FACING});
     }
 
-
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return new AEDriveEntiy();
+    }
 }

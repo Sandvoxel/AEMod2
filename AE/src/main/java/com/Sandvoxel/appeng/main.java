@@ -12,7 +12,7 @@ public class main {
 
 
 @Mod.Instance
-public static main instance = new main();
+public static main.MorePowerMain instance = new main.MorePowerMain();
 
 
 
