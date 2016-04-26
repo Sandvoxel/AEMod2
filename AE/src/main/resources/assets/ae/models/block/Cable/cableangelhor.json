@@ -1,8 +1,7 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
-        "particle": "ae:blocks/ItemPartCableGlass",
-        "1": "ae:blocks/blank"
+        "particle": "ae:blocks/ItemPartCableGlass"
     },
     "elements": [
         {
@@ -12,8 +11,6 @@
             "faces": {
                 "north": { "texture": "#particle", "uv": [ 6.0, 6.0, 10.0, 10.0 ] },
                 "east": { "texture": "#particle", "uv": [ 6.0, 6.0, 10.0, 10.0 ] },
-                "south": { "texture": "#1", "uv": [ 6.0, 6.0, 10.0, 10.0 ] },
-                "west": { "texture": "#1", "uv": [ 6.0, 6.0, 10.0, 10.0 ] },
                 "up": { "texture": "#particle", "uv": [ 6.0, 6.0, 10.0, 10.0 ] },
                 "down": { "texture": "#particle", "uv": [ 6.0, 6.0, 10.0, 10.0 ] }
             }
@@ -24,9 +21,7 @@
             "to": [ 6.0, 10.0, 10.0 ], 
             "faces": {
                 "north": { "texture": "#particle", "uv": [ 0.0, 6.0, 6.0, 10.0 ], "rotation": 180 },
-                "east": { "texture": "#1", "uv": [ 6.0, 0.0, 10.0, 4.0 ], "rotation": 180 },
                 "south": { "texture": "#particle", "uv": [ 10.0, 6.0, 16.0, 10.0 ], "rotation": 180 },
-                "west": { "texture": "#1", "uv": [ 6.0, 0.0, 10.0, 4.0 ], "rotation": 180 },
                 "up": { "texture": "#particle", "uv": [ 0.0, 6.0, 6.0, 10.0 ] },
                 "down": { "texture": "#particle", "uv": [ 0.0, 6.0, 6.0, 10.0 ] }
             }
@@ -36,9 +31,7 @@
             "from": [ 6.0, 6.0, 10.0 ], 
             "to": [ 10.0, 10.0, 16.0 ], 
             "faces": {
-                "north": { "texture": "#1", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
                 "east": { "texture": "#particle", "uv": [ 0.0, 6.0, 6.0, 10.0 ] },
-                "south": { "texture": "#1", "uv": [ 6.0, 6.0, 10.0, 10.0 ] },
                 "west": { "texture": "#particle", "uv": [ 0.0, 6.0, 6.0, 10.0 ], "rotation": 180 },
                 "up": { "texture": "#particle", "uv": [ 6.0, 0.0, 10.0, 6.0 ], "rotation": 180 },
                 "down": { "texture": "#particle", "uv": [ 6.0, 0.0, 10.0, 6.0 ] }
