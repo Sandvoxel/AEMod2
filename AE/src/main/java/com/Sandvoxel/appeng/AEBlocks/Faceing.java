@@ -1,5 +1,6 @@
 package com.Sandvoxel.appeng.AEBlocks;
 
+import com.Sandvoxel.appeng.AEItems.Drives;
 import com.Sandvoxel.appeng.tileEntiy.AEDriveEntiy;
 import com.Sandvoxel.appeng.tileEntiy.AETileEntiy;
 import net.minecraft.block.Block;
@@ -10,8 +11,11 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
@@ -63,6 +67,41 @@ public class Faceing extends AEBaceBlock implements ITileEntityProvider {
     {
         return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
+
+
+
+
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
+    {
+        ItemStack stack = playerIn.getCurrentEquippedItem();
+        if(stack != null)
+        {
+            if(stack.getItem() instanceof Drives)
+            {
+                if(stack.getItem().hasEffect(stack))
+                {
+                    AEDriveEntiy tect = (AEDriveEntiy) worldIn.getTileEntity(pos);
+                    stack.stackSize--;
+                    playerIn.addChatMessage(new ChatComponentText("Added cordinate cache to tile entity"));
+                }
+            }
+        }
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public int getMetaFromState(IBlockState state)
     {
