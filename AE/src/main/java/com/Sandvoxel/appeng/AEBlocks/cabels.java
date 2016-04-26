@@ -82,7 +82,40 @@ public class cabels extends Block implements ITileEntityProvider {
         boolean flagEast = this.canConnectTo(worldIn, pos.east());
         boolean flagUp = this.canConnectTo(worldIn, pos.up());
         boolean flagDown = this.canConnectTo(worldIn, pos.down());
+        float xMin = 0.375F;
+        float xMax = 0.625F;
+        float yMin = 0.375F;
+        float yMax = 0.625F;
+        float zMin = 0.375F;
+        float zMax = 0.625F;
 
+        if (flagDown){yMin = 0.0F;}
+        if (flagUp){yMax = 1.0F;}
+
+        if (flagDown || flagUp)
+        {
+            this.setBlockBounds(0.375F, yMin, 0.375F, 0.625F, yMax, 0.625F);
+            super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+        }
+
+        if (flagWest){xMin = 0.0F;}
+        if (flagEast){xMax = 1.0F;}
+
+        if (flagEast || flagWest)
+        {
+            this.setBlockBounds(xMin, 0.375F, 0.375F, xMax, 0.625F, 0.625F);
+            super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+        }
+
+
+        if (flagNorth){zMin = 0.0F;}
+        if (flagSouth){zMax = 1.0F;}
+
+        if (flagSouth || flagNorth)
+        {
+            this.setBlockBounds(0.375F, 0.375F, zMin, 0.625F, 0.625F, zMax);
+            super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+        }
 
         this.setBlockBounds(0.375F, 0.375F, 0.375F, 0.625F, 0.625F, 0.625F);
         super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
@@ -90,12 +123,27 @@ public class cabels extends Block implements ITileEntityProvider {
 
     public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
     {
-        this.setBlockBounds(0.375F, 0.375F, 0.375F, 0.625F, 0.625F, 0.625F);
+        boolean flagNorth = this.canConnectTo(worldIn, pos.north());
+        boolean flagSouth = this.canConnectTo(worldIn, pos.south());
+        boolean flagWest = this.canConnectTo(worldIn, pos.west());
+        boolean flagEast = this.canConnectTo(worldIn, pos.east());
+        boolean flagUp = this.canConnectTo(worldIn, pos.up());
+        boolean flagDown = this.canConnectTo(worldIn, pos.down());
+        float xMin = 0.375F;
+        float xMax = 0.625F;
+        float yMin = 0.375F;
+        float yMax = 0.625F;
+        float zMin = 0.375F;
+        float zMax = 0.625F;
+        if (flagDown){yMin = 0.0F;}
+        if (flagUp){yMax = 1.0F;}
+        if (flagWest){xMin = 0.0F;}
+        if (flagEast){xMax = 1.0F;}
+        if (flagNorth){zMin = 0.0F;}
+        if (flagSouth){zMax = 1.0F;}
+
+        this.setBlockBounds(xMin, yMin, zMin, xMax, yMax, zMax);
     }
-
-
-
-
 
 
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
