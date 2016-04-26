@@ -1,6 +1,7 @@
 package com.Sandvoxel.appeng.AEItems;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
@@ -8,6 +9,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.IChatComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -17,7 +19,9 @@ import java.util.List;
 /**
  * Created by koval on 4/25/2016.
  */
-public class Drives extends Item {
+public class Drives extends Item  {
+
+
 
     public Drives(String unlocalizedName){
         super();
@@ -27,13 +31,15 @@ public class Drives extends Item {
 
 
     }
+
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ)
     {
         if (playerIn.isSneaking()){
             if (stack.getTagCompound() == null){
-
                 stack.setTagCompound(new NBTTagCompound());
+
+
             }
             NBTTagCompound nbt = new NBTTagCompound();
             nbt.setBoolean("test",true);
@@ -45,14 +51,15 @@ public class Drives extends Item {
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn)
     {
-        NBTTagCompound nbt = stack.getTagCompound();
 
         if (!playerIn.isSneaking()){
             if (stack.getTagCompound() != null){
 
+                NBTTagCompound nbt = (NBTTagCompound) stack.getTagCompound().getTag("bool");
                 System.out.println("this works");
                 nbt.setBoolean("test", false);
                 stack.clearCustomName();
+
             }
         }
         return stack;
@@ -61,7 +68,9 @@ public class Drives extends Item {
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
     {
         if (stack.hasTagCompound()) {
-            tooltip.add("NBT: " + stack.getTagCompound().toString());
+            NBTTagCompound nbt = (NBTTagCompound) stack.getTagCompound().getTag("bool");
+            boolean test = nbt.getBoolean("test");
+            tooltip.add("NBT: " + test);
         } else {
             tooltip.add("No NBT data stored");
         }
@@ -71,10 +80,16 @@ public class Drives extends Item {
     @SideOnly(Side.CLIENT)
     public boolean hasEffect(ItemStack stack)
     {
-        if(stack.getTagCompound() != null)
-        {
-            return stack.getTagCompound().hasKey("bool");
+
+        if(stack.getTagCompound() != null) {
+            NBTTagCompound nbt = (NBTTagCompound) stack.getTagCompound().getTag("bool");
+            boolean test = nbt.getBoolean("test");
+            if (test){
+                return stack.getTagCompound().hasKey("bool");
+            }
         }
         return false;
     }
+
+
 }

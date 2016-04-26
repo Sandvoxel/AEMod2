@@ -14,7 +14,7 @@ public class AEBlocks {
 
 
     public static void createblocks(){
-        GameRegistry.registerBlock(drive= new Faceing("drive"), drive.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(drive= new DriveBays("drive"), drive.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(cabel= new cabels("cabel"), cabel.getUnlocalizedName().substring(5));
     }
 }

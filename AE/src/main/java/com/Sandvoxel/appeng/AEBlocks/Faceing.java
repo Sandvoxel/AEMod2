@@ -20,13 +20,13 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 
-public class Faceing extends AEBaceBlock implements ITileEntityProvider {
+public class Faceing extends AEBaceBlock {
 
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
    public Faceing (String drive){
        super(drive);
-       setUnlocalizedName("drive");
+
 
 
         }
@@ -70,40 +70,6 @@ public class Faceing extends AEBaceBlock implements ITileEntityProvider {
 
 
 
-
-    @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
-    {
-        ItemStack stack = playerIn.getCurrentEquippedItem();
-        if(stack != null)
-        {
-            if(stack.getItem() instanceof Drives)
-            {
-                if(stack.getItem().hasEffect(stack))
-                {
-                    AEDriveEntiy tect = (AEDriveEntiy) worldIn.getTileEntity(pos);
-                    stack.stackSize--;
-                    playerIn.addChatMessage(new ChatComponentText("Added cordinate cache to tile entity"));
-
-                }
-            }
-        }
-        return true;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public int getMetaFromState(IBlockState state)
     {
         return ((EnumFacing)state.getValue(FACING)).getIndex();
@@ -114,7 +80,5 @@ public class Faceing extends AEBaceBlock implements ITileEntityProvider {
         return new BlockState(this, new IProperty[] {FACING});
     }
 
-    public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new AEDriveEntiy();
-    }
+
 }
