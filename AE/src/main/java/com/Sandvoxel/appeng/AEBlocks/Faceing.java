@@ -84,6 +84,7 @@ public class Faceing extends AEBaceBlock implements ITileEntityProvider {
                     AEDriveEntiy tect = (AEDriveEntiy) worldIn.getTileEntity(pos);
                     stack.stackSize--;
                     playerIn.addChatMessage(new ChatComponentText("Added cordinate cache to tile entity"));
+
                 }
             }
         }

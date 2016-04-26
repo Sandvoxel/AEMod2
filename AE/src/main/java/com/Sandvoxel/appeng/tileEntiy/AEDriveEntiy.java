@@ -1,6 +1,7 @@
 package com.Sandvoxel.appeng.tileEntiy;
 
 import com.Sandvoxel.appeng.AESaveData.AEDriveStore;
+import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -20,7 +21,6 @@ public class AEDriveEntiy extends TileEntity {
         NBTTagCompound nbt = (NBTTagCompound) dart.getTagCompound().getTag("bool");
         boolean test = nbt.getBoolean("test");
         data.add(new AEDriveStore(test));
-
     }
     public AEDriveStore getEntry(int i)
     {
@@ -68,9 +68,6 @@ public class AEDriveEntiy extends TileEntity {
 
         compound.setTag("teleports", entryList);
     }
-
-
-
 
 
 

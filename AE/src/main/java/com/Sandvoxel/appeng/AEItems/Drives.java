@@ -29,22 +29,25 @@ public class Drives extends Item {
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ)
     {
-        if (!playerIn.isSneaking()){
+        if (playerIn.isSneaking()){
             if (stack.getTagCompound() == null){
+
+
                 stack.setTagCompound(new NBTTagCompound());
             }
             NBTTagCompound nbt = new NBTTagCompound();
             nbt.setBoolean("test",true);
             stack.getTagCompound().setTag("bool", nbt);
-            stack.setStackDisplayName(EnumChatFormatting.BLACK + "Drive");
+            stack.setStackDisplayName(EnumChatFormatting.DARK_GRAY + "Drive");
         }
         return false;
     }
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn)
     {
-        if (playerIn.isSneaking()){
+        if (!playerIn.isSneaking()){
             if (stack.getTagCompound() != null){
+
                 System.out.println("this works");
                 stack.getTagCompound().removeTag("bool");
                 stack.clearCustomName();
@@ -63,5 +66,15 @@ public class Drives extends Item {
         tooltip.add("state "+ test);
 
 
+    }
+    @Override
+    @SideOnly(Side.CLIENT)
+    public boolean hasEffect(ItemStack stack)
+    {
+        if(stack.getTagCompound() != null)
+        {
+            return stack.getTagCompound().hasKey("bool");
+        }
+        return false;
     }
 }
