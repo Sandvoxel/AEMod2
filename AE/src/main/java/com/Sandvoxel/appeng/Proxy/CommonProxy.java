@@ -20,7 +20,7 @@ public class CommonProxy {
 
     }
     public void init(FMLInitializationEvent e) {
-        NetworkRegistry.INSTANCE.registerGuiHandler(main.instance, new GUIHandler());
+       
     }
 
 
