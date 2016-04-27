@@ -42,7 +42,7 @@ public class DriveBays extends Faceing implements ITileEntityProvider {
                     AEDriveCache tests = AEDriveCache.readEntryFromNBT(nbt);
 
                     AEDriveEntiy tect = (AEDriveEntiy) worldIn.getTileEntity(pos);
-                    stack.stackSize--;
+
                     playerIn.addChatMessage(new ChatComponentText("Added cordinate cache to tile entity " + testse ));
                     playerIn.addChatMessage(new ChatComponentText(" this is a thing "+ tests));
 

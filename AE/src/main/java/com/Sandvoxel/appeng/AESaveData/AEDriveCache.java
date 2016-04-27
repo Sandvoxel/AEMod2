@@ -6,13 +6,13 @@ import net.minecraft.nbt.NBTTagCompound;
  * Created by koval on 4/25/2016.
  */
 public class AEDriveCache {
-    private Boolean test;
+    private static Boolean test;
 
     public AEDriveCache(boolean test) {
         this.test = test;
     }
 
-    public boolean isTest() {
+    public static boolean readTest() {
         return test;
     }
 

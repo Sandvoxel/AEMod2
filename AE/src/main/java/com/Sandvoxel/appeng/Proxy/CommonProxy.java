@@ -4,10 +4,7 @@ import com.Sandvoxel.appeng.AEBlocks.AEBlocks;
 import com.Sandvoxel.appeng.AEItems.AEItems;
 
 import com.Sandvoxel.appeng.main;
-import com.Sandvoxel.appeng.tileEntiy.AETileEntiy;
 import com.Sandvoxel.appeng.tileEntiy.AETileEntiys;
-import net.minecraft.client.main.Main;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -23,8 +20,9 @@ public class CommonProxy {
 
     }
     public void init(FMLInitializationEvent e) {
-
+        NetworkRegistry.INSTANCE.registerGuiHandler(main.instance, new GUIHandler());
     }
+
 
     public void postInit(FMLPostInitializationEvent e) {
 
