@@ -19,9 +19,8 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by koval on 4/25/2016.
- */
+
+
 public class AEDriveEntiy extends TileEntity implements IInventory {
 
     private boolean aBoolean;
@@ -76,7 +75,7 @@ public class AEDriveEntiy extends TileEntity implements IInventory {
 
     @Override
     public String getName() {
-        return this.hasCustomName() ? this.Drive : "container.tutorial_tile_entity";
+        return this.hasCustomName() ? this.Drive : "container.Drive";
     }
 
     @Override
